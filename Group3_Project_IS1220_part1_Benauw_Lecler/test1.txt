@@ -1,0 +1,17 @@
+writeToFile output.txt
+setup Paris 50 6 5 123 52
+default_setup Stockholm 6
+default_setup Londres 7
+listNetwork
+addUser Edouard Vmax Paris
+addUser Simon Vlibre Paris
+addUser Kevin None Paris
+addUser Quentin None Paris
+addUser Ivan Vmax Paris
+setUserGPSPosition Paris Edouard 0.012 0.032
+setUserGPSPosition Paris Simon 0.024 0.007
+setUserGPSPosition Paris Kevin 0.035 0.018
+setUserGPSPosition Paris Quentin 0.005 0.024
+setUserGPSPosition Paris Ivan 0.014 0.017
+display Paris
+writeToFile stopWriting

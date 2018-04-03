@@ -1,0 +1,80 @@
+setup Paris 50 6 5 123 52
+default_setup Stockholm 6
+default_setup Londres 7
+listNetwork
+List of all networks created :
+Paris | Stockholm | Londres | 
+
+addUser Edouard Vmax Paris
+addUser Simon Vlibre Paris
+addUser Kevin None Paris
+addUser Quentin None Paris
+addUser Ivan Vmax Paris
+setUserGPSPosition Paris Edouard 0.012 0.032
+setUserGPSPosition Paris Simon 0.024 0.007
+setUserGPSPosition Paris Kevin 0.035 0.018
+setUserGPSPosition Paris Quentin 0.005 0.024
+setUserGPSPosition Paris Ivan 0.014 0.017
+display Paris
+This myVelib Network is situated in Paris
+Its ID is 1
+Here are the detailed informations about all the stations of the network :
+[Station Plus |  id=2 | name =station1 | Coordonnées GPS :  latitude=0.03325574155406416, longitude=0.02572652306456201 | Number of parking slots : 12
+, Station Plus |  id=3 | name =station2 | Coordonnées GPS :  latitude=0.004786234702719385, longitude=0.008506372903648703 | Number of parking slots : 12
+, Station Plus |  id=4 | name =station3 | Coordonnées GPS :  latitude=0.04244243408555128, longitude=0.0018837739415664232 | Number of parking slots : 12
+, Station Standard |  id= 5 | name =station4 | Coordonnées GPS : latitude=0.006822533112321095, longitude=0.03546125128752129 | Number of parking slots 12
+, Station Plus |  id=6 | name =station5 | Coordonnées GPS :  latitude=0.016591523941908676, longitude=0.004710132661693425 | Number of parking slots : 12
+, Station Standard |  id= 7 | name =station6 | Coordonnées GPS : latitude=0.01289599372653522, longitude=0.03848472526692972 | Number of parking slots 12
+, Station Standard |  id= 8 | name =station7 | Coordonnées GPS : latitude=0.04457569858994994, longitude=0.035268948028030274 | Number of parking slots 12
+, Station Standard |  id= 9 | name =station8 | Coordonnées GPS : latitude=0.02050903707377561, longitude=0.02829389195412142 | Number of parking slots 12
+, Station Standard |  id= 10 | name =station9 | Coordonnées GPS : latitude=0.012608078639863391, longitude=0.012739204738734087 | Number of parking slots 12
+, Station Standard |  id= 11 | name =station10 | Coordonnées GPS : latitude=0.00499368384726363, longitude=0.0024805717166688003 | Number of parking slots 12
+, Station Standard |  id= 12 | name =station11 | Coordonnées GPS : latitude=0.0148461067781626, longitude=0.028319492262902136 | Number of parking slots 12
+, Station Plus |  id=13 | name =station12 | Coordonnées GPS :  latitude=0.012949409694148536, longitude=0.011843105608365692 | Number of parking slots : 12
+, Station Plus |  id=14 | name =station13 | Coordonnées GPS :  latitude=0.008205701701002778, longitude=0.030636784183246727 | Number of parking slots : 12
+, Station Plus |  id=15 | name =station14 | Coordonnées GPS :  latitude=0.035116672636577854, longitude=0.02597534886943243 | Number of parking slots : 12
+, Station Standard |  id= 16 | name =station15 | Coordonnées GPS : latitude=0.02494048310728609, longitude=0.03886744775421475 | Number of parking slots 12
+, Station Plus |  id=17 | name =station16 | Coordonnées GPS :  latitude=0.01222546855843255, longitude=0.03362369746820387 | Number of parking slots : 12
+, Station Plus |  id=18 | name =station17 | Coordonnées GPS :  latitude=0.029932729210683733, longitude=0.02815078123452088 | Number of parking slots : 12
+, Station Plus |  id=19 | name =station18 | Coordonnées GPS :  latitude=0.023183102326721848, longitude=0.014555798796260584 | Number of parking slots : 12
+, Station Standard |  id= 20 | name =station19 | Coordonnées GPS : latitude=7.764966234313407E-4, longitude=0.04380456651557413 | Number of parking slots 12
+, Station Plus |  id=21 | name =station20 | Coordonnées GPS :  latitude=0.04372826799448055, longitude=0.025393446614705946 | Number of parking slots : 12
+, Station Standard |  id= 22 | name =station21 | Coordonnées GPS : latitude=0.001128021275656495, longitude=0.034058937896829726 | Number of parking slots 12
+, Station Standard |  id= 23 | name =station22 | Coordonnées GPS : latitude=0.025349427755696985, longitude=0.02864510025672894 | Number of parking slots 12
+, Station Standard |  id= 24 | name =station23 | Coordonnées GPS : latitude=0.006860961118656453, longitude=0.02795528488252296 | Number of parking slots 12
+, Station Standard |  id= 25 | name =station24 | Coordonnées GPS : latitude=0.041168927912734396, longitude=0.038465399798416136 | Number of parking slots 12
+, Station Plus |  id=26 | name =station25 | Coordonnées GPS :  latitude=0.008717041646492427, longitude=0.04215171832486069 | Number of parking slots : 12
+, Station Standard |  id= 27 | name =station26 | Coordonnées GPS : latitude=0.043701671902724996, longitude=0.009809150575216564 | Number of parking slots 12
+, Station Standard |  id= 28 | name =station27 | Coordonnées GPS : latitude=0.002081207685590783, longitude=0.0011597765674146953 | Number of parking slots 12
+, Station Standard |  id= 29 | name =station28 | Coordonnées GPS : latitude=0.029877206399879726, longitude=0.04357491086201526 | Number of parking slots 12
+, Station Plus |  id=30 | name =station29 | Coordonnées GPS :  latitude=0.02253265185702093, longitude=0.035204935401469815 | Number of parking slots : 12
+, Station Plus |  id=31 | name =station30 | Coordonnées GPS :  latitude=0.008559289577061546, longitude=0.02010654834111346 | Number of parking slots : 12
+, Station Plus |  id=32 | name =station31 | Coordonnées GPS :  latitude=0.019968694492336903, longitude=0.012544785522439155 | Number of parking slots : 12
+, Station Standard |  id= 33 | name =station32 | Coordonnées GPS : latitude=0.039612479105809714, longitude=0.013515200725494619 | Number of parking slots 12
+, Station Standard |  id= 34 | name =station33 | Coordonnées GPS : latitude=0.017497133835129724, longitude=0.01337467863620313 | Number of parking slots 12
+, Station Standard |  id= 35 | name =station34 | Coordonnées GPS : latitude=0.039541224154949595, longitude=0.02021475420764342 | Number of parking slots 12
+, Station Plus |  id=36 | name =station35 | Coordonnées GPS :  latitude=0.016325068553888617, longitude=0.014595511780858475 | Number of parking slots : 12
+, Station Plus |  id=37 | name =station36 | Coordonnées GPS :  latitude=0.015042701548240795, longitude=0.0010540271264936583 | Number of parking slots : 12
+, Station Standard |  id= 38 | name =station37 | Coordonnées GPS : latitude=0.002527508371316988, longitude=0.02266216511993377 | Number of parking slots 12
+, Station Plus |  id=39 | name =station38 | Coordonnées GPS :  latitude=0.011752678309046577, longitude=0.012816314775219982 | Number of parking slots : 12
+, Station Plus |  id=40 | name =station39 | Coordonnées GPS :  latitude=0.02057676641558643, longitude=0.010700934628803465 | Number of parking slots : 12
+, Station Standard |  id= 41 | name =station40 | Coordonnées GPS : latitude=0.0028137057920155414, longitude=0.04264903550849574 | Number of parking slots 12
+, Station Standard |  id= 42 | name =station41 | Coordonnées GPS : latitude=0.014665553592340041, longitude=0.028128865202381774 | Number of parking slots 12
+, Station Standard |  id= 43 | name =station42 | Coordonnées GPS : latitude=0.006040125732093028, longitude=0.004256687465952988 | Number of parking slots 12
+, Station Standard |  id= 44 | name =station43 | Coordonnées GPS : latitude=0.00926769791543508, longitude=0.0030979591366576756 | Number of parking slots 12
+, Station Plus |  id=45 | name =station44 | Coordonnées GPS :  latitude=0.014732665719146885, longitude=0.015095940114051576 | Number of parking slots : 12
+, Station Plus |  id=46 | name =station45 | Coordonnées GPS :  latitude=0.03766049003553193, longitude=0.010487259141005702 | Number of parking slots : 12
+, Station Standard |  id= 47 | name =station46 | Coordonnées GPS : latitude=0.0021371018996656486, longitude=3.2030507949978984E-4 | Number of parking slots 12
+, Station Standard |  id= 48 | name =station47 | Coordonnées GPS : latitude=0.04076020935154682, longitude=0.03890639202415525 | Number of parking slots 12
+, Station Plus |  id=49 | name =station48 | Coordonnées GPS :  latitude=0.032054387209270396, longitude=0.002467355677824128 | Number of parking slots : 12
+, Station Plus |  id=50 | name =station49 | Coordonnées GPS :  latitude=0.04105593619137514, longitude=0.038365304195254225 | Number of parking slots : 12
+, Station Standard |  id= 51 | name =station50 | Coordonnées GPS : latitude=0.015802725397654024, longitude=7.989205172340888E-4 | Number of parking slots 12
+]
+Here are the detailed informations about all the users of the network
+[name=Edouard | id=531 | Coordonnées GPS latitude=0.012, longitude=0.032 | Carte d'abonnement No card | Currently not riding
+, name=Simon | id=534 | Coordonnées GPS latitude=0.024, longitude=0.007 | Carte d'abonnement No card | Currently not riding
+, name=Kevin | id=537 | Coordonnées GPS latitude=0.035, longitude=0.018 | Carte d'abonnement No card | Currently not riding
+, name=Quentin | id=540 | Coordonnées GPS latitude=0.005, longitude=0.024 | Carte d'abonnement No card | Currently not riding
+, name=Ivan | id=543 | Coordonnées GPS latitude=0.014, longitude=0.017 | Carte d'abonnement No card | Currently not riding
+]
+writeToFile stopWriting

@@ -1,0 +1,36 @@
+default_setup Paris 5
+addStation Paris station1 Standard 0.002 0.002 5
+addStation Paris station2 Standard 0.004 0.002 5
+addStation Paris station3 Standard 0.006 0.002 5
+addStation Paris station4 Standard 0.002 0.004 5
+addStation Paris station5 Standard 0.004 0.004 5
+addStation Paris station6 Standard 0.006 0.004 5
+addStation Paris station7 Standard 0.002 0.006 5
+addStation Paris station8 Standard 0.004 0.006 5
+addStation Paris station9 Standard 0.006 0.006 5
+addStation Paris station10 Standard 0.0059 0.0059 5
+addBicycle Paris station1 Electrical 
+addBicycle Paris station1 Mechanical
+addBicycle Paris station2 Electrical 
+addBicycle Paris station2 Mechanical
+addBicycle Paris station3 Electrical 
+addBicycle Paris station3 Mechanical
+addBicycle Paris station4 Electrical 
+addBicycle Paris station4 Mechanical
+addBicycle Paris station5 Electrical 
+addBicycle Paris station5 Mechanical
+addBicycle Paris station6 Electrical 
+addBicycle Paris station6 Mechanical
+addBicycle Paris station7 Electrical 
+addBicycle Paris station7 Mechanical
+addBicycle Paris station8 Electrical 
+addBicycle Paris station8 Mechanical
+addBicycle Paris station9 Electrical 
+addBicycle Paris station9 Mechanical
+addBicycle Paris station10 Electrical 
+addBicycle Paris station10 Mechanical
+addUser Edouard Vmax Paris
+display Paris
+rentBike Edouard station1 Electrical
+updateTime 30
+returnBike Edouard station10
