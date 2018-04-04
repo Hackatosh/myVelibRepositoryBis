@@ -31,7 +31,7 @@ class StationBikeCountersTest {
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork1");
+		Network network1 = NetworkFactory.getNetwork("testNetwork27");
 		Station station1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"station1");
 		Station station2 = stationFactory.getStation("Standard", new GPSLocation(3,1),network1,"station2");
 		Bycicle bycicle = bycicleFactory.getBycicle("Electrical");
@@ -48,7 +48,7 @@ class StationBikeCountersTest {
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork2");
+		Network network1 = NetworkFactory.getNetwork("testNetwork28");
 		Station station1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"bla");
 		ParkingSlot slot1 = new ParkingSlot(station1);
 		Bycicle bycicle = bycicleFactory.getBycicle("Mechanical");
@@ -62,7 +62,7 @@ class StationBikeCountersTest {
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork3");
+		Network network1 = NetworkFactory.getNetwork("testNetwork29");
 		Station station1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"blabal");
 		ParkingSlot slot1 = new ParkingSlot(station1);
 		Bycicle bycicle = bycicleFactory.getBycicle("Mechanical");
@@ -76,7 +76,7 @@ class StationBikeCountersTest {
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork4");
+		Network network1 = NetworkFactory.getNetwork("testNetwork30");
 		Station station1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"station3");
 		ParkingSlot slot1 = new ParkingSlot(station1);
 		Bycicle bycicle = bycicleFactory.getBycicle("Electrical");
@@ -91,7 +91,7 @@ class StationBikeCountersTest {
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork31");
 		Station station1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"bjbi");
 		ParkingSlot slot1 = new ParkingSlot(station1);
 		Bycicle bycicle = new BycicleElectrical();

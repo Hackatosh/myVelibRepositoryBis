@@ -16,9 +16,8 @@ class NetworkFactoryTest {
 	@Test
 	void testGetNetwork() throws BadInstantiationException, FactoryNullException, NetworkNameAlreadyUsedException {
 		AbstractFactory networkFactory = FactoryProducer.getFactory("Network");
-		Network network1 =networkFactory.getNetwork("network1");
-		assertTrue(network1.getName()=="network1");
-		assertTrue(network1.getId()==1);
+		Network network1 =networkFactory.getNetwork("network25");
+		assertTrue(network1.getName()=="network25");
 	}
 
 }

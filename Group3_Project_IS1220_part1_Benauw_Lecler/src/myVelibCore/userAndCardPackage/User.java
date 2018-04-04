@@ -493,7 +493,7 @@ public class User implements Runnable, Observer{
 	public void rides() {
 		while(Time.getCurrentTime().isBefore(this.timeWhenRentingBike)) {
 			try {Thread.sleep(100);} 
-			catch (InterruptedException e) {e.printStackTrace();}
+			catch (InterruptedException e) {}
 		}
 		try {
 			this.setGpsLocation(currentDepartureStation.getGpsLocation());
@@ -503,7 +503,7 @@ public class User implements Runnable, Observer{
 		
 		while(Time.getCurrentTime().isBefore(this.timeWhenReturningBike)) {
 			try {Thread.sleep(100);} 
-			catch (InterruptedException e) {e.printStackTrace();}
+			catch (InterruptedException e) {}
 		}
 	
 		try {
@@ -511,10 +511,7 @@ public class User implements Runnable, Observer{
 			currentDestinationStation.returnABike(this);
 			
 			
-		} catch (ReturnBikeFailException | StationFullException e1) {
-			// TODO Auto-generated catch block
-			e1.getMessage();
-		}
+		} catch (ReturnBikeFailException | StationFullException e1) {System.out.println(e1.getMessage());}
 	
 		
 		

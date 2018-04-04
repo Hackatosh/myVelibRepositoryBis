@@ -31,7 +31,7 @@ class StationComparatorByMostUsedTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork34");
 		Station station1 = stationFactory.getStation("standard", new GPSLocation(1,1), network1,"station1");
 		Station station2 = stationFactory.getStation("standard", new GPSLocation(30,30), network1,"station2");
 		ParkingSlot slot1 = new ParkingSlot(station1);

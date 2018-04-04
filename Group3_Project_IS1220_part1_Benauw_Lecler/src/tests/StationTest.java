@@ -41,7 +41,7 @@ class StationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory networkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = networkFactory.getNetwork("network1");
+		Network network1 = networkFactory.getNetwork("network36");
 
 		User user = userFactory.getUser("John",network1);
 		
@@ -65,7 +65,7 @@ class StationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network2 = NetworkFactory.getNetwork("testNetwork2");
+		Network network2 = NetworkFactory.getNetwork("testNetwork37");
 		User user = userFactory.getUser("John",network2);
 		Station station = stationFactory.getStation("Plus", new GPSLocation(1,0),network2,"station2");
 		ParkingSlot slot1 = new ParkingSlot(station);
@@ -89,7 +89,7 @@ class StationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network3 = NetworkFactory.getNetwork("testNetwork3");
+		Network network3 = NetworkFactory.getNetwork("testNetwork38");
 		User user = userFactory.getUser("John",network3);
 		Station stationRent = stationFactory.getStation("Plus", new GPSLocation(1,0),network3,"station3");
 		Station stationReturn = stationFactory.getStation("Standard", new GPSLocation(1,1),network3,"station4");
@@ -117,7 +117,7 @@ class StationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network4 = NetworkFactory.getNetwork("testNetwork4");
+		Network network4 = NetworkFactory.getNetwork("testNetwork39");
 		User user = userFactory.getUser("John",network4);
 		Station stationRent = stationFactory.getStation("Plus", new GPSLocation(1,0),network4,"station5");
 		Station stationReturn = stationFactory.getStation("Standard", new GPSLocation(1,1),network4,"station6");
@@ -148,7 +148,7 @@ class StationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network5 = NetworkFactory.getNetwork("testNetwork5");
+		Network network5 = NetworkFactory.getNetwork("testNetwork40");
 		Station stationPlus1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network5,"station7");
 		Station stationPlus2 = stationFactory.getStation("Plus", new GPSLocation(20,20),network5,"station8");
 		Station stationStandard1 = stationFactory.getStation("Standard", new GPSLocation(10,10),network5,"station9");
@@ -157,14 +157,14 @@ class StationTest {
 		ParkingSlot slot3 = new ParkingSlot(stationStandard1);
 		User user = null;
 		User user1 = null;
-		try {user = new User("Edouard",network5);user1 = new User("Simon", network5);}
+		try {user = new User("Edouard2",network5);user1 = new User("Simon2", network5);}
 		catch(Exception e) { System.out.println(e.getMessage());}
 		Bycicle bycicle1 = bycicleFactory.getBycicle("Electrical");
 		Bycicle bycicle2 = bycicleFactory.getBycicle("Electrical");
 		stationPlus2.addBike(bycicle1);
 		stationStandard1.addBike(bycicle2);
 		user.setGpsLocation(new GPSLocation(25,25));
-		user.planningRide(new GPSLocation(0,0), "Shortest Path", "Electrical");
+		user.planningRide(new GPSLocation(0,0), "Shortest_Path", "Electrical");
 		try {
 			stationPlus2.rentABike(user1, "Electrical");
 		} catch (RentBikeFailException e) {
@@ -196,7 +196,7 @@ class StationTest {
 		catch (Exception e) {System.out.println(e.getMessage());}
 		user.setGpsLocation(new GPSLocation(25,25));
 		stationPlus2.getStationBikeCounters().addBike(bycicle1, stationPlus2.getSlots());
-		user.planningRide(new GPSLocation(0,0), "Shortest Path", "Electrical");
+		user.planningRide(new GPSLocation(0,0), "Shortest_Path", "Electrical");
 		user1.setBycicle(bycicle1);
 		try {
 			stationPlus2.returnABike(user1);

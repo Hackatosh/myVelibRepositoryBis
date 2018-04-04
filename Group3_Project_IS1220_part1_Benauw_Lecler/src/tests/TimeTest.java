@@ -49,10 +49,6 @@ class TimeTest {
 		assertTrue(t2.isBefore(t1));
 	}
 
-	@Test
-	void testUpdateTime() {
-		Time.updateTime();
-		assertTrue(Time.getStaticCurrentTime()==1);
-	}
+
 
 }
