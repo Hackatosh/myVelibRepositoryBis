@@ -130,7 +130,10 @@ public abstract class Station implements Observable {
 	public boolean isOn() {
 		return this.status;
 	}
-
+	/**
+	 * Put the station offline
+	 * @throws SlotStatusFailException
+	 */
 	public void turnOff() throws SlotStatusFailException {
 		this.status = false;
 		for (ParkingSlot s : slots) {
@@ -140,7 +143,10 @@ public abstract class Station implements Observable {
 		this.notifyObserversDeparture();
 		this.notifyObserversDestination();
 	}
-
+	/**
+	 * Put the station online
+	 * @throws SlotStatusFailException
+	 */
 	public void turnOn() throws SlotStatusFailException {
 		this.status = true;
 		for (ParkingSlot s : slots) {

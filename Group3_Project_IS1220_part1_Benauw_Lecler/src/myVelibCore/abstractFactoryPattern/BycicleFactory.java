@@ -16,7 +16,9 @@ import myVelibCore.utilities.GPSLocation;
  * @author Simon Lecler
  */
 public class BycicleFactory extends AbstractFactory{
-	
+	/**
+	 * @return a String with a random type of Bycicle
+	 */
 	public static String getRandomBycicleType() {
 		if (Math.random()>0.5) {return "Electrical";}
 		else {return "Mecanical";}

@@ -1,7 +1,11 @@
 package myVelibCore.stationPackage;
 
 import myVelibCore.byciclePackage.Bycicle;
-
+/**
+ * Used for a return in station class
+ * @author Edouard
+ *
+ */
 public class StationRemovingBycicle {
 	private Bycicle bycicle;
 	private ParkingSlot slot;

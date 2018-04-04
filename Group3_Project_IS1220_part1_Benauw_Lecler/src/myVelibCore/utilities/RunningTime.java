@@ -9,9 +9,21 @@ import myVelibCore.stationPackage.Network;
  *
  */
 public class RunningTime implements Runnable{
+	/**
+	 * The unique instance of running time
+	 */
 	private static RunningTime instance = new RunningTime();
+	/**
+	 * The thread currently used by the instance to update the time
+	 */
 	private Thread currentThread;
+	/**
+	 * A static variable in order to know if the time is running or no
+	 */
 	private static boolean isTimeRunning = false;
+	/**
+	 * Incremented as time pass in order to print update for the user
+	 */
 	private int minutesPassed = 0;
 	
 	private RunningTime() {
@@ -43,7 +55,10 @@ public class RunningTime implements Runnable{
 			catch (InterruptedException e) {}
 		}
 	}
-	
+	/**
+	 * Method used by user interface and other method to run the thread which update time
+	 * and update isTimeRunning boolean accordingly
+	 */
 	public static void runTime() {
 		if(RunningTime.isTimeRunning()) {
 			System.out.println("Time is already running !");
@@ -55,7 +70,10 @@ public class RunningTime implements Runnable{
 			time.start();
 		}
 	}
-	
+	/**
+	 * Method used by user interface and other method to stop the thread which update time
+	 * and update isTimeRunning boolean accordingly
+	 */
 	public static void stopTime() {
 		if(RunningTime.isTimeRunning()) {
 			RunningTime.getInstance().getCurrentThread().interrupt();

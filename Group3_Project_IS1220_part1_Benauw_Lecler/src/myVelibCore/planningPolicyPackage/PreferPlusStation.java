@@ -119,7 +119,17 @@ public class PreferPlusStation implements PlanningPolicy{
 			throw new PlanningPathFailedException("Prefer Plus",e);
 	}
 }
-
+	/**
+	 * @param start 
+	 * 		GPS location of the user's starting position of type GPSLocation
+	 * @param destination
+	 * 		GPS location of the user's destination of type GPSLocation
+	 * @param bycicleType
+	 * 		Type of bycicle chosen by the user, of type String
+	 * @return The new destination, recomputed during the ride
+	 * @author Simon Lecler
+	 */
+	
 	@Override
 	public Station recalculateWhenRiding(GPSLocation start, GPSLocation destination, String bycicleType, Network network) throws  RecalculatePathFailedException{
 		

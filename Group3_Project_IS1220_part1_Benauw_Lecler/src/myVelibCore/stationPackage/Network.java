@@ -407,6 +407,12 @@ public class Network {
 		throw new UnexistingStationIDException(id);
 	}
 	
+	/**
+	 * Search the station by its name in all the networks
+	 * @param name
+	 * @return
+	 * @throws UnexistingStationNameException
+	 */
 	public static Station searchStationByNameAllNetworks(String name) throws UnexistingStationNameException {
 		for (Network n : allNetworks) {
 			for (Station s : n.allStations) {
@@ -446,7 +452,12 @@ public class Network {
 		}
 		throw new UnexistingUserNameException(name);
 	}
-	
+	/**
+	 * Search the user by its id in all the networks
+	 * @param id
+	 * @return
+	 * @throws UnexistingUserIDException
+	 */
 	public static User searchUserByIDAllNetworks(int id) throws UnexistingUserIDException {
 		for (Network n : allNetworks) {
 			for (User u : n.allUsers) {
@@ -457,7 +468,12 @@ public class Network {
 		}
 		throw new UnexistingUserIDException(id);
 	}
-	
+	/**
+	 * Search the user by its name in all the networks
+	 * @param name
+	 * @return
+	 * @throws UnexistingUserNameException
+	 */
 	public static User searchUserByNameAllNetworks(String name) throws UnexistingUserNameException {
 		for (Network n : allNetworks) {
 			for (User u : n.allUsers) {

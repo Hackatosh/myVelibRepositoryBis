@@ -33,16 +33,27 @@ public class GPSLocation {
 		super();
 	}
 	
+	/**
+	 * You input a maximum sidearea and the method return the maximum latitude possible to obtain if you consider a line coming from the point(0,0) 
+	 * @param sidearea
+	 * 		in km
+	 * @return
+	 */
 	
 	public static double getMaxLatitude(double sidearea) {
-		// You input a maximum sidearea and the method return the maximum latitude possible to obtain if you consider a line coming from the point(0,0) 
 		return sidearea/111.11;
 		
 		
 	}
 	
+	/**
+	 * You input a maximum sidearea and the method return the maximum longitude possible to obtain if you consider a line coming from the point(0,0)
+	 * @param sidearea 
+	 * 		in km
+	 * @return
+	 */
 	public static double getMaxLongitude(double sidearea) {
-		// You input a maximum sidearea and the method return the maximum longitude possible to obtain if you consider a line coming from the point(0,0)
+	 
 		return sidearea/(111.1);
 		
 		

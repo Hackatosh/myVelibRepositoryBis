@@ -19,29 +19,12 @@ public class Time  {
 	 * Time registered when an operation needing to register the time is performed
 	 */
 	private int registeredTime;
-	
+	/**
+	 * Object Time created when the program is launched, in order to have an origin
+	 */
 	private static Time originalTime = new Time();
 	
-	/**
-	 * Unique instance of RunnningTime
-	 * @see RunningTime
-	 * @see RunningTime#getInstance()
-	 */
-	//private RunningTime timeThread = RunningTime.getInstance();
-	//public Thread getClock() {
-		//return clock;
-	//}
 
-	/**
-	 * Thread that plays the role of a clock. Its role is to update the time
-	 * @see Time#updateTime()
-	 */
-	//private Thread clock = new Thread(timeThread);
-	
-	//public RunningTime getTimeThread() {
-		//return timeThread;
-	//}
-	public static Lock lock = new ReentrantLock();
 	public Time() {
 		this.registeredTime=Time.getStaticCurrentTime();
 	}
@@ -133,17 +116,7 @@ public class Time  {
 	/**
 	 * @return The current time increased by an increment of minute every 10ms.
 	 */
-	//public synchronized void updateTime() {
-		
-		//	try {
-			//	Thread.sleep(10);
-//			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-		//		e.printStackTrace();
-			//}
-		//	Time.setCurrentTime(currentTime+1);
-			//notifyAll();
-//		}
+
 	public static void updateTime() {
 		Time.setCurrentTime(currentTime+1);	
 	}

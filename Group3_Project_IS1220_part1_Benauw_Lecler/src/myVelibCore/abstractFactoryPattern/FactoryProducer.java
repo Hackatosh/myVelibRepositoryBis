@@ -5,12 +5,13 @@ import myVelibCore.exceptions.BadInstantiationException;
 /**
  * <b>FactoryProducer belongs to the factory pattern</b>
  * <p>It allows to instantiate abstract factories
- * <p> There are four types of factories :
+ * <p> There are five types of factories :
  * <ul>
  * <li>UserFactory</li>
  * <li>CardFactory</li>
  * <li>BycicleFactory</li>
  * <li>StationFactory</li>
+ * <li>NetworkFactory</li>
  * </ul>
  * @author Simon Lecler
  */

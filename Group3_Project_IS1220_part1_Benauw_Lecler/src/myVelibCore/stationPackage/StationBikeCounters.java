@@ -89,14 +89,22 @@ public class StationBikeCounters {
 		else if(bycicleType.equalsIgnoreCase(BycicleMechanical.typeWritten)) {return numberMechanical;}
 		else {throw new UnimplementedSubclassWithInputException("Bycicle",bycicleType);}
 	}
-	
+	/**
+	 *  Update the counters when the bicycle in parameters is added to the station
+	 * @param bycicle
+	 * @throws UnimplementedSubclassWithoutInputException
+	 */
 	public void increaseBikeByType(Bycicle bycicle) throws UnimplementedSubclassWithoutInputException {
 		if (bycicle instanceof BycicleElectrical) {numberElectrical++;freeSlots--;}
 		else if (bycicle instanceof BycicleMechanical) {numberMechanical++;freeSlots--;}
 		else if (bycicle == null) {}
 		else {throw new UnimplementedSubclassWithoutInputException("Bycicle");}
 	}
-	
+	/**
+	 *  Update the counters when the bicycle in parameters is retrieved from the station
+	 * @param bycicle
+	 * @throws UnimplementedSubclassWithoutInputException
+	 */
 	public void reduceBikeByType(Bycicle bycicle) throws UnimplementedSubclassWithoutInputException {
 		if (bycicle instanceof BycicleElectrical) {numberElectrical--;freeSlots++;}
 		else if (bycicle instanceof BycicleMechanical) {numberMechanical--;freeSlots++;}
@@ -135,7 +143,16 @@ public class StationBikeCounters {
 		throw new AddBikeFailException(bycicle,e);
 	}
 	}
-	
+	/**
+	 * A removing operation is performed following the given bycicleType in parameter. The method search for a parking slot which hold a corresponding bike and perform the removing operation.
+	 * @param bycicleType
+	 * type of bicycle wanted by the user
+	 * @param slots
+	 * list of slots of the station
+	 * @return an object which contain the bicycle which has been removed and the concerned parking slot
+	 * @throws RemoveBikeFailException
+	 * The operation can fail if the bycicleType parameter is not recognized or if there is no corresponding bike in the station
+	 */
 	public StationRemovingBycicle removeBike (String bycicleType, ArrayList<ParkingSlot> slots) throws RemoveBikeFailException {
 	try {
 		if (!bycicleType.equalsIgnoreCase(BycicleElectrical.typeWritten) && !bycicleType.equalsIgnoreCase(BycicleMechanical.typeWritten)) {

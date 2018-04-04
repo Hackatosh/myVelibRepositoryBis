@@ -9,7 +9,21 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 import myVelibCore.stationPackage.Network;
-
+ /**
+  * This class is the client application. It handles the CLUI. It contains all the commands and their description, and its main runs an infinite loop.
+  * <p> The main initialize the CLUI and then allows the user to enter commands. 
+  * <p> The line is then read with the scanner and is split in order to obtain an array of strings.
+  * <p> The first word is used as the command and the number of elements in the array is counted to obtain the number of parameters.
+  * <p> If the command is not recognized, it prints an UNRECOGNIZED_COMMAND_MSG. If the command is recognized, the number of parameters is checked.
+  * <p> If the number of parameters doesn't correspond to the command entered, it prints an INCORRECT_PARAMETERS_NUMBER_MSG.
+  * <p> If the command and the number of parameters are both good, it calls the right static method from ParsingAndCalling, which will perform the operation and handle the exceptions.
+  * <p> When it's done, it loops again.
+  * <p> You can also use commands to read a given txt file or ask to write every outputs to a given txt file
+  * <p> Also, the loop check at every iteration that the user has not been caught in a deadlock (cannot enter any command and no txt file is read).
+  * <p> Commands are listed below
+  * @author Edouard
+  *
+  */
 public class UserLoop {
 	//When you loop, you read the line entered by the user
 	//The first word is used as the command

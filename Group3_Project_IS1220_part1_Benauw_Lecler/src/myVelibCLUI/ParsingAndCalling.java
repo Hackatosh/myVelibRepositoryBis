@@ -28,7 +28,18 @@ import myVelibCore.userAndCardPackage.User;
 import myVelibCore.utilities.GPSLocation;
 import myVelibCore.utilities.RunningTime;
 import myVelibCore.utilities.Time;
-
+	/**
+	 * This class is used for parsing and calling.
+	 * <p>An array of string args is given by the class UserLoop, which contain the main infinite loop.
+	 * <p>The number of words in the array of string has already been checked by UserLoop, which call the right static method in ParsingAndCalling according to
+	 * <p>the first word of the array (the command) and the number of elements in the array (number of parameters).
+	 * <p>Then, every parameters are parsed into the expected type (String, int, double...). If the parsing fail, the command fail and the TYPE_ERROR_MSG is printed.
+	 * <p>If the parsing succeed, the object are constructs with the abstract factory pattern and the methods corresponding to the method are called.
+	 * <p>In case of failure, the exceptions are all handed in the methods of this class.
+	 * <p>When the command has been performed, successfully or not, the program goes back to UserLoop and allow the user to type an other command (or read another line of a txt file).
+	 * @author Edouard
+	 *
+	 */
 public class ParsingAndCalling {
 	
 	private static final String TYPE_ERROR_MSG = "An argument is of a wrong type. Please retry or type help for assistance.";

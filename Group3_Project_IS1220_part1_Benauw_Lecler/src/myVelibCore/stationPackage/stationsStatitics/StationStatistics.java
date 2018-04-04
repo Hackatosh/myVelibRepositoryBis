@@ -115,7 +115,7 @@ public class StationStatistics {
 		allOperations.add(operation);
 	}
 	/**
-	 * 
+	 *  Compute the average occupation rate, which can be displayed and used to sort the stations
 	 * @param slots
 	 * 		List of the slots of the station
 	 * @param beginningTime

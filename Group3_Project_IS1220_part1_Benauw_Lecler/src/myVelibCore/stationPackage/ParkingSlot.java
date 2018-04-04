@@ -63,7 +63,10 @@ public class ParkingSlot {
 	public boolean isStatus() {
 		return status;
 	}
-	
+	/**
+	 * Update the status of the parking slot and the station statistics when the station is turned off
+	 * @throws SlotStatusFailException
+	 */
 	public void stationIsTurnedOff() throws SlotStatusFailException {
 		boolean changed = (this.status); //If slot was working before the station is put off
 		if (changed) {
@@ -79,6 +82,10 @@ public class ParkingSlot {
 		}
 	}
 	
+	/**
+	 * Update the status of the parking slot and the station statistics when the station is turned on
+	 * @throws SlotStatusFailException
+	 */
 	public void stationIsTurnedOn() throws SlotStatusFailException {
 		boolean changed = (statusBeforeStationOff); //If the slot was on before the station was putt off
 		if (changed) {
@@ -93,7 +100,11 @@ public class ParkingSlot {
 			}
 		}
 	}
-	
+	/**
+	 * Set the status of the parking slot following the statusWanted and update the station and its statistics accordingly
+	 * @param statusWanted
+	 * @throws SlotStatusFailException
+	 */
 	public void setStatus(boolean statusWanted) throws SlotStatusFailException {  
 		boolean statusBefore = this.getOccupationStatus();
 		boolean changed = (statusBefore!=statusWanted);

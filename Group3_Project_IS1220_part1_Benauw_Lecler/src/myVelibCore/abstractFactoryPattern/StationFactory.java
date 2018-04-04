@@ -20,6 +20,9 @@ import myVelibCore.utilities.GPSLocation;
  */
 public class StationFactory extends AbstractFactory{
 	
+	/**
+	 * @return a String with a random type of Station
+	 */
 	public static String getRandomStationType() {
 		if (Math.random()>0.5) {return "Standard";}
 		else {return "Plus";}

@@ -6,8 +6,21 @@ import myVelibCore.byciclePackage.BycicleMechanical;
 import myVelibCore.exceptions.CardNoneNoBalanceException;
 import myVelibCore.exceptions.UnimplementedSubclassWithoutInputException;
 
+/**
+ * Implementation of the CardVisitor to compute the cost of ride
+ * @author Edouard
+ *
+ */
+
 public class CardVisitorConcrete1 implements CardVisitor {
 	
+	/**
+	 * 
+	 * @param minutes duration of the ride
+	 * @param balance current time-credit
+	 * @param numberOfFreeHour number of hours which costs 0 (depends on the bike used)
+	 * @return optimal number of time credit which has to be used in order to minimize the cost for user
+	 */
 	public int getOptimalRetrievingFromBalance(int minutes, int balance, int numberOfFreeHour) {
 		int balanceNeededToGoTo60Multiple = minutes%60;
 		if(balance>balanceNeededToGoTo60Multiple) {
@@ -22,7 +35,13 @@ public class CardVisitorConcrete1 implements CardVisitor {
 		}
 		return(0);
 	}
-	
+	/**
+	 * Compute the cost of the ride and update the time-credit balance on the card accordingly
+	 * @card the card hold by the user
+	 * @bycicle the bycicle used by the user
+	 * @minutes the duration of the ride
+	 * @return return the cost of the ride
+	 */
 	@Override
 	public int visit(CardNone card,Bycicle bycicle, int minutes) throws UnimplementedSubclassWithoutInputException {
 		if (bycicle instanceof BycicleMechanical) {
@@ -35,7 +54,13 @@ public class CardVisitorConcrete1 implements CardVisitor {
 			throw new UnimplementedSubclassWithoutInputException("Bycicle");
 		}
 	}
-
+	/**
+	 * Compute the cost of the ride and update the time-credit balance on the card accordingly
+	 * @card the card hold by the user
+	 * @bycicle the bycicle used by the user
+	 * @minutes the duration of the ride
+	 * @return return the cost of the ride
+	 */
 	@Override
 	public int visit(CardVLibre card,Bycicle bycicle, int minutes) throws UnimplementedSubclassWithoutInputException {
 		int balance = card.getBalance();
@@ -57,7 +82,15 @@ public class CardVisitorConcrete1 implements CardVisitor {
 			throw new UnimplementedSubclassWithoutInputException("Bycicle");
 		}
 	}
-
+	
+	/**
+	 * Compute the cost of the ride and update the time-credit balance on the card accordingly
+	 * @card the card hold by the user
+	 * @bycicle the bycicle used by the user
+	 * @minutes the duration of the ride
+	 * @return return the cost of the ride
+	 */
+	
 	@Override
 	public int visit(CardVMax card,Bycicle bycicle, int minutes) throws UnimplementedSubclassWithoutInputException {
 		int balance = card.getBalance();
