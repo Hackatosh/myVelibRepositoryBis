@@ -135,19 +135,21 @@ public class StationStatistics {
 					operationsCurrentSlot.add(currentOperation);
 				}
 			}
-			operationsCurrentSlot.sort(new StationOperationComparatorByDate());
-			boolean currentStatus = operationsCurrentSlot.get(0).wasParkingSlotOccupiedBefore();
-			Time currentTime = beginningTime;
-			for (StationOperation currentOperation : operationsCurrentSlot) {
-				if(currentOperation.isParkingSlotOccupiedAfter()!=currentStatus) {
-					if(currentStatus) {
-						totalOnlineTime = totalOnlineTime + Time.timeDifference(currentTime, currentOperation.getDateOfOperation());
+			if(!operationsCurrentSlot.isEmpty()) {
+				operationsCurrentSlot.sort(new StationOperationComparatorByDate());
+				boolean currentStatus = operationsCurrentSlot.get(0).wasParkingSlotOccupiedBefore();
+				Time currentTime = beginningTime;
+				for (StationOperation currentOperation : operationsCurrentSlot) {
+					if(currentOperation.isParkingSlotOccupiedAfter()!=currentStatus) {
+						if(currentStatus) {
+							totalOnlineTime = totalOnlineTime + Time.timeDifference(currentTime, currentOperation.getDateOfOperation());
+						}
+						currentStatus=currentOperation.isParkingSlotOccupiedAfter();
+						currentTime=currentOperation.getDateOfOperation();
 					}
-					currentStatus=currentOperation.isParkingSlotOccupiedAfter();
-					currentTime=currentOperation.getDateOfOperation();
-				}
-				if (currentStatus) {
-					totalOnlineTime = totalOnlineTime + Time.timeDifference(currentTime, endingTime);
+					if (currentStatus) {
+						totalOnlineTime = totalOnlineTime + Time.timeDifference(currentTime, endingTime);
+					}
 				}
 			}
 		}

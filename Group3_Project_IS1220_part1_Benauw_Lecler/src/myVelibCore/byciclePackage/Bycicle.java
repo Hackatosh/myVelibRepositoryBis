@@ -4,7 +4,6 @@ import myVelibCore.utilities.IDGenerator;
 
 public abstract class Bycicle {
 	private final int id;
-	public static  String typeWritten = "Default";
 	/**
 	 * Constructor of Bycicle
 	 * Give a unique ID to the bycicle

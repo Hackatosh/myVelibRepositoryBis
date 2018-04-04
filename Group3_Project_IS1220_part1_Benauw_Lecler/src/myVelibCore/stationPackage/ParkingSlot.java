@@ -152,8 +152,8 @@ public class ParkingSlot {
 	
 	public void displayBike() {
 		if(this.bycicle==null) {System.out.println("Bike in the slot : currently no bike.");}
-		if(this.bycicle instanceof BycicleElectrical) {System.out.println("Bike in the slot : currently an electrical bike.");}
-		if(this.bycicle instanceof BycicleMechanical) {System.out.println("Bike in the slot : currently  mechanical bike.");}
+		else if(this.bycicle instanceof BycicleElectrical) {System.out.println("Bike in the slot : currently an electrical bike.");}
+		else if(this.bycicle instanceof BycicleMechanical) {System.out.println("Bike in the slot : currently  mechanical bike.");}
 		else {System.out.println("Bike in the slot : unknown type of bike !!!");}
 	}
 	

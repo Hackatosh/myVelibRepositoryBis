@@ -234,7 +234,7 @@ public class User implements Runnable, Observer{
 		this.timeWhenRentingBike = null;
 		this.lastRentTime=Time.getCurrentTime();
 		this.userStatitics.increaseNumberOfRidesBy(1);
-		System.out.println("User named "+ name + " has successfully rented a "+this.bycicle.typeWritten+ " bike and is departed");
+		
 		
 	}
 	/**
@@ -303,16 +303,18 @@ public class User implements Runnable, Observer{
 	@Override
 	public void updateDeparture (boolean isThereAnyBicycle,boolean stationStatus){
 		if (!isThereAnyBicycle || !stationStatus) {
+			boolean isTimeRunning = RunningTime.isTimeRunning();
+			if(isTimeRunning) {RunningTime.stopTime();}
 			try {
 				System.out.println("Departure unavailable, do you want to find another destination ?\r\n");
-				RunningTime.stopTime();
 				Scanner sc = new Scanner(System.in);
 				String reponse = sc.nextLine();
-				RunningTime.runTime();
+				
 					if (reponse.equalsIgnoreCase("Yes")){
 						try {
 							planningRide(userLastInput.getLastWantedDestination(), userLastInput.getLastWantedPolicy(), userLastInput.getLastWantedBycicle());
 							System.out.println("Ride successfully updated !");
+							if(isTimeRunning) {RunningTime.runTime();}
 						}
 						catch(PlanningRideFailException e) {
 							throw new UpdateRideFailException(e);
@@ -320,18 +322,18 @@ public class User implements Runnable, Observer{
 					}
 					else if (reponse.equalsIgnoreCase("No")) {
 						System.out.println("\r\nAs you wish !\r\n");
+						if(isTimeRunning) {RunningTime.runTime();}
 					}
 					else {
 						System.out.println("\r\nBad input. You must answer Yes or No\r\n");
 						this.updateDeparture(isThereAnyBicycle,stationStatus);
+						if(isTimeRunning) {RunningTime.runTime();}
 					}
 			}
 			catch(UpdateRideFailException e) {
-				RunningTime.stopTime();
 				System.out.println("\r\nImpossible to Update the path ! Would you like to see the log ?\r\n");
 				Scanner sc2 = new Scanner(System.in);
 				String reponse2 = sc2.nextLine();
-				RunningTime.runTime();
 				if (reponse2.equalsIgnoreCase("Yes")){System.out.println(e.getMessage());}
 				else {System.out.println("No log printed\r\n");}
 				System.out.println("Try to update the ride again ?\r\n");
@@ -339,6 +341,7 @@ public class User implements Runnable, Observer{
 				sc2.close();
 				if (reponse2.equalsIgnoreCase("Yes")){
 					this.updateDeparture(isThereAnyBicycle,stationStatus);
+					if(isTimeRunning) {RunningTime.runTime();}
 				}
 				else {System.out.println("Ok ! Sorry for the unconvenience ! r\n");
 					//Cleanup code
@@ -348,6 +351,7 @@ public class User implements Runnable, Observer{
 				 		timeWhenReturningBike = null;
 				 		timeToDestination = null;
 				 		isPlanningARide=false;
+				 		if(isTimeRunning) {RunningTime.runTime();}
 				}
 				
 			}
@@ -365,12 +369,12 @@ public class User implements Runnable, Observer{
 	@Override
 	public void updateDestination (boolean isThereFreeSlots,boolean stationStatus) {
 		if(!isThereFreeSlots || !stationStatus) {
+			boolean isTimeRunning = RunningTime.isTimeRunning();
+			if (isTimeRunning) {RunningTime.stopTime();}
 			try {
-				RunningTime.stopTime();
 				System.out.println("Destination unavailable, do you want to find another destination ?");
 				Scanner sc = new Scanner(System.in);
 				String reponse = sc.nextLine();
-				RunningTime.runTime();
 				if (reponse.equalsIgnoreCase("Yes")) {
 					if(this.getCurrentDepartureStation()==null) {
 						try {
@@ -382,6 +386,7 @@ public class User implements Runnable, Observer{
 							this.timeWhenReturningBike = Time.operationTime((int) timeDouble1);
 							this.timeToDestination = Time.operationTime((int) timeDouble2);
 							System.out.println("Ride successfully updated !");
+							if(isTimeRunning) {RunningTime.runTime();}
 						}
 						catch(BadSpeedSelectionException | RecalculatePathFailedException | BadInstantiationException e) {
 							throw new UpdateRideFailException(e);
@@ -392,6 +397,7 @@ public class User implements Runnable, Observer{
 						try {
 							planningRide(userLastInput.getLastWantedDestination(), userLastInput.getLastWantedPolicy(), userLastInput.getLastWantedBycicle());
 							System.out.println("Ride successfully updated !");
+							if(isTimeRunning) {RunningTime.runTime();}
 						}
 						catch(PlanningRideFailException e) {
 							throw new UpdateRideFailException(e);
@@ -400,24 +406,28 @@ public class User implements Runnable, Observer{
 				}
 				else if (reponse.equalsIgnoreCase("No")) {
 					System.out.println("As you wish !");
+					if(isTimeRunning) {RunningTime.runTime();}
 				}
 				else {
 					System.out.println("Bad input. You must answer Yes or No");
 					this.updateDestination(isThereFreeSlots,stationStatus);
+					if(isTimeRunning) {RunningTime.runTime();}
 				}
 			}
 			catch(UpdateRideFailException e) {
-				RunningTime.stopTime();
+				
 				System.out.println("\r\nImpossible to Update the path ! Would you like to see the log ?\r\n");
 				Scanner sc2 = new Scanner(System.in);
 				String reponse2 = sc2.nextLine();
-				RunningTime.runTime();
+				
+				
 				if (reponse2.equalsIgnoreCase("Yes")){System.out.println(e.getMessage());}
 				else {System.out.println("No log printed\r\n");}
 				System.out.println("Try to update the ride again ?\r\n");
 				reponse2 = sc2.nextLine();
 				if (reponse2.equalsIgnoreCase("Yes")){
 					this.updateDestination(isThereFreeSlots,stationStatus);
+					if(isTimeRunning) {RunningTime.runTime();}
 				}
 				else {System.out.println("Ok ! Sorry for the unconvenience ! r\n");
 					//Cleanup code
@@ -427,6 +437,7 @@ public class User implements Runnable, Observer{
 				 		timeWhenReturningBike = null;
 				 		timeToDestination = null;
 				 		isPlanningARide=false;
+				 		if(isTimeRunning) {RunningTime.runTime();}
 				}
 			}
 		}
@@ -481,8 +492,7 @@ public class User implements Runnable, Observer{
 	 */
 	public void rides() {
 		while(Time.getCurrentTime().isBefore(this.timeWhenRentingBike)) {
-			try {Thread.sleep(100);
-			System.out.print("!");} 
+			try {Thread.sleep(100);} 
 			catch (InterruptedException e) {e.printStackTrace();}
 		}
 		try {
@@ -514,6 +524,7 @@ public class User implements Runnable, Observer{
 		}
 		this.setGpsLocation(this.userLastInput.getLastWantedDestination());
 		this.isPlanningARide = false;
+		System.out.println("The user : " + name +" is arrived at destination");
 	}
 	
 	public boolean isPlanningARide() {
@@ -536,7 +547,6 @@ public class User implements Runnable, Observer{
 	public void run() {
 		while(true) {
 			if (this.isPlanningARide == true){
-				System.out.println("On est dans le true de run");
 				this.rides();
 			}
 			else{

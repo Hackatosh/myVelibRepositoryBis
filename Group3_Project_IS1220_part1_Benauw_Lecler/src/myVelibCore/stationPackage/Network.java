@@ -504,11 +504,11 @@ public class Network {
 	 */
 	public void sortStationBy(String choice) throws BadInstantiationException {
 		Comparator<Station> Comparator = null;
-		if(choice.equalsIgnoreCase("Least Occupied")) {Comparator = new StationComparatorByLeastOccupied(Time.getOriginalTime(),Time.getCurrentTime());}
-		if(choice.equalsIgnoreCase("Most Used")) {Comparator = new StationComparatorByMostUsed();}
+		if(choice.equalsIgnoreCase("Least_Occupied")) {Comparator = new StationComparatorByLeastOccupied(Time.getOriginalTime(),Time.getCurrentTime());}
+		else if(choice.equalsIgnoreCase("Most_Used")) {Comparator = new StationComparatorByMostUsed();}
 		else{throw new BadInstantiationException(choice, "Station Comparator");}
 		this.allStations.sort(Comparator);
-		System.out.println("Station from the Network " + this.name + "sorted by " + choice);
+		System.out.println("Station from the Network " + this.name + " sorted by " + choice);
 		for (Station s : this.allStations) {
 			s.displayOnlyName();
 		}

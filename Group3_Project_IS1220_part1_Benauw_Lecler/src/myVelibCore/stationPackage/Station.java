@@ -156,7 +156,6 @@ public abstract class Station implements Observable {
 	 */
 	public void addParkingSlot() {
 		ParkingSlot newPS = new ParkingSlot(this);
-		this.slots.add(newPS);
 		this.stationBikeCounters.increaseFreeSlots();
 	}
 
@@ -225,14 +224,14 @@ public abstract class Station implements Observable {
 
 			else {
 
-				Time.lock.lock();
+				
 
 				StationRemovingBycicle rentingBycicle;
 				rentingBycicle = this.stationBikeCounters.removeBike(bycicleType, this.slots);
 				this.unregisterObserverDeparture(user);
 				user.isDeparted(rentingBycicle.getBycicle());
-				System.out.println(
-						"You've sucessfully rented a " + bycicleType + " bike from station id " + this.getId());
+				System.out.println("User named : " + user.getName() + " has sucessfully rented a " + bycicleType + " bike from station named " + this.name);
+				
 				this.stationStatitics.addRentOperation(user, Time.getCurrentTime(), rentingBycicle.getSlot());
 
 				if (this.stationBikeCounters.isThereAnyBycicle() == false) {
@@ -241,7 +240,7 @@ public abstract class Station implements Observable {
 
 				}
 
-				Time.lock.unlock();
+				
 
 			}
 		} catch (RemoveBikeFailException | RentTwoBikeException | UncompatibleNetworkException | StationOfflineException
@@ -275,7 +274,7 @@ public abstract class Station implements Observable {
 			} else if (user.getBycicle() == null) {
 				throw new NoBikeToReturnException();
 			} else {
-				Time.lock.lock();
+				
 				ParkingSlot slot = this.stationBikeCounters.addBike(user.getBycicle(), slots);
 				int cost = user.computeMyRideCost(user.getLastRentTime().timeDifferenceBetween(Time.getCurrentTime()));
 				System.out.println("Duration of your ride : "
@@ -291,12 +290,12 @@ public abstract class Station implements Observable {
 				this.stationStatitics.addReturnOperation(user, Time.getCurrentTime(), slot);
 				this.unregisterObserverDestination(user);
 				user.isArrived(cost);
-				System.out.println("You've sucessfully returned your bike to station id " + this.getId());
+				System.out.println("User named : "+user.getName()+" has sucessfully returned your bike to station named " + name);
 				if (this.stationBikeCounters.isThereFreeSlots() == false) {
 					this.changed = true;
 					this.notifyObserversDestination();
 				}
-				Time.lock.unlock();
+				
 
 			}
 		} catch (NoBikeToReturnException | AddBikeFailException | ComputeCostImpossibleException

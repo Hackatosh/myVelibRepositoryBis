@@ -8,7 +8,6 @@ addStation Paris station6 Standard 0.006 0.004 5
 addStation Paris station7 Standard 0.002 0.006 5
 addStation Paris station8 Standard 0.004 0.006 5
 addStation Paris station9 Standard 0.006 0.006 5
-addStation Paris station10 Standard 0.0059 0.0059 5
 addBicycle Paris station1 Electrical 
 addBicycle Paris station1 Mechanical
 addBicycle Paris station2 Electrical 
@@ -27,10 +26,48 @@ addBicycle Paris station8 Electrical
 addBicycle Paris station8 Mechanical
 addBicycle Paris station9 Electrical 
 addBicycle Paris station9 Mechanical
-addBicycle Paris station10 Electrical 
-addBicycle Paris station10 Mechanical
 addUser Edouard Vmax Paris
+addUser Simon Vmax Paris
+addUser Arnaud Vmax Paris
+addUser Ivan Vplus Paris
+addUser Kevin Vplus Paris
+addUser Quentin Vplus Paris
+addUser Marjorie None Paris
+addUser Vincent None Paris
+addUser Guillaume None Paris
 display Paris
 rentBike Edouard station1 Electrical
-updateTime 30
-returnBike Edouard station10
+rentBike Simon station2 Mechanical
+rentBike Arnaud station3 Electrical
+rentBike Ivan station4 Mechanical
+rentBike Kevin station5 Electrical
+rentBike Quentin station6 Mechanical
+rentBike Marjorie station7 Electrical
+rentBike Vincent station8 Mechanical
+rentBike Guillaume station9 Electrical
+updateTime 60
+returnBike Edouard station2
+updateTime 60
+returnBike Simon station3
+updateTime 60
+returnBike Arnaud station4
+updateTime 60
+returnBike Ivan station5
+updateTime 60
+returnBike Kevin station6
+updateTime 60
+returnBike Quentin station7
+updateTime 60
+returnBike Marjorie station8
+updateTime 60
+returnBike Vincent station9
+updateTime 60
+returnBike Guillaume station1
+updateTime 60
+rentBike Edouard station1 Mechanical
+updateTime 60
+returnBike Edouard station1
+displayStation Paris station1
+displayUser Paris Edouard
+sortStation Paris Least_Occupied
+sortStation Paris Most_Used

@@ -155,7 +155,13 @@ public class ParsingAndCalling {
 			AbstractFactory UserFactory = FactoryProducer.getFactory("User");
 			User user = UserFactory.getUser(userName,network);
 			AbstractFactory cardFactory = FactoryProducer.getFactory("Card");
-			Card userCard = cardFactory.getCard(cardType);
+			try{
+				Card userCard = cardFactory.getCard(cardType);
+				user.setUserCard(userCard);
+			}
+			catch(BadInstantiationException e) {
+				System.out.println("Impossible to give user a card because :" +e.getMessage());
+			}
 			Thread userThread = new Thread(user);
 			userThread.start();
 		}

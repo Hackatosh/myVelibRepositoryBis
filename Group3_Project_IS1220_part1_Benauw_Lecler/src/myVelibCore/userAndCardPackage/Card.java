@@ -23,7 +23,7 @@ public abstract class Card {
 	/**
 	 * The object computing statistics for this card
 	 */
-	private CardStatitics cardStatitics;
+	private CardStatitics cardStatitics = new CardStatitics();
 	/**
 	 * Default constructor of the card
 	 * <p> By default the balance is 0</p>

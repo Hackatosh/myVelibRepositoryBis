@@ -11,10 +11,11 @@ import myVelibCore.stationPackage.Network;
 public class RunningTime implements Runnable{
 	private static RunningTime instance = new RunningTime();
 	private Thread currentThread;
-	private static boolean isTimeRunning;
+	private static boolean isTimeRunning = false;
+	private int minutesPassed = 0;
 	
 	private RunningTime() {
-		
+		super();
 	}
 	/**
 	 * 
@@ -34,7 +35,10 @@ public class RunningTime implements Runnable{
 	public void run() {
 		while(isTimeRunning) {
 			Time.updateTime();
-			System.out.print(".");
+			minutesPassed++;
+			if(minutesPassed==60) {
+				minutesPassed = 0; 
+				System.out.println("An hour has passed !");}
 			try {Thread.sleep(100);} 
 			catch (InterruptedException e) {}
 		}
