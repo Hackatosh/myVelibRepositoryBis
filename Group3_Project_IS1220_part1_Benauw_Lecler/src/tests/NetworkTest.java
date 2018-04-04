@@ -24,7 +24,7 @@ class NetworkTest {
 	void getAListOfStationTypeTest() throws BadInstantiationException, UnimplementedSubclassWithInputException, FactoryNullException, NetworkNameAlreadyUsedException, StationNameAlreadyUsedException{
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork2");
 		Station station1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"station1");
 		Station station2 = stationFactory.getStation("Standard",new GPSLocation(3,0),network1,"station2");
 		ArrayList<Station> plus = new ArrayList<Station>();
