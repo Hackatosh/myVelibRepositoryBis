@@ -322,7 +322,13 @@ public class User implements Runnable, Observer{
 					}
 					else if (reponse.equalsIgnoreCase("No")) {
 						System.out.println("\r\nAs you wish !\r\n");
-						if(isTimeRunning) {RunningTime.runTime();}
+						currentDestinationStation=null;
+				 		currentDepartureStation=null;
+				 		timeWhenRentingBike = null;
+				 		timeWhenReturningBike = null;
+				 		timeToDestination = null;
+				 		isPlanningARide=false;
+				 		if(isTimeRunning) {RunningTime.runTime();}
 					}
 					else {
 						System.out.println("\r\nBad input. You must answer Yes or No\r\n");
@@ -406,7 +412,13 @@ public class User implements Runnable, Observer{
 				}
 				else if (reponse.equalsIgnoreCase("No")) {
 					System.out.println("As you wish !");
-					if(isTimeRunning) {RunningTime.runTime();}
+					currentDestinationStation=null;
+			 		currentDepartureStation=null;
+			 		timeWhenRentingBike = null;
+			 		timeWhenReturningBike = null;
+			 		timeToDestination = null;
+			 		isPlanningARide=false;
+			 		if(isTimeRunning) {RunningTime.runTime();}
 				}
 				else {
 					System.out.println("Bad input. You must answer Yes or No");
@@ -491,37 +503,40 @@ public class User implements Runnable, Observer{
 	 * @throws BadInstantiationException
 	 */
 	public void rides() {
-		while(Time.getCurrentTime().isBefore(this.timeWhenRentingBike)) {
+		while(this.isPlanningARide() && Time.getCurrentTime().isBefore(this.timeWhenRentingBike) ) {
 			try {Thread.sleep(100);} 
 			catch (InterruptedException e) {}
 		}
-		try {
-			this.setGpsLocation(currentDepartureStation.getGpsLocation());
-			currentDepartureStation.rentABike(this, this.userLastInput.getLastWantedBycicle());
-		} 
-		catch (RentBikeFailException e1) {System.out.println(e1.getMessage());}
-		
-		while(Time.getCurrentTime().isBefore(this.timeWhenReturningBike)) {
+		if(isPlanningARide) {
+			try {
+				this.setGpsLocation(currentDepartureStation.getGpsLocation());
+				currentDepartureStation.rentABike(this, this.userLastInput.getLastWantedBycicle());
+			} 
+			catch (RentBikeFailException e1) {System.out.println(e1.getMessage());}
+		}
+		while(this.isPlanningARide() && Time.getCurrentTime().isBefore(this.timeWhenReturningBike)) {
 			try {Thread.sleep(100);} 
 			catch (InterruptedException e) {}
 		}
-	
-		try {
-			this.setGpsLocation(currentDestinationStation.getGpsLocation());
-			currentDestinationStation.returnABike(this);
+		if(isPlanningARide) {
+			try {
+				this.setGpsLocation(currentDestinationStation.getGpsLocation());
+				currentDestinationStation.returnABike(this);
 			
 			
-		} catch (ReturnBikeFailException | StationFullException e1) {System.out.println(e1.getMessage());}
-	
+			} catch (ReturnBikeFailException | StationFullException e1) {System.out.println(e1.getMessage());}
+		}
 		
 		
-		while(Time.getCurrentTime().isBefore(this.timeToDestination)) {
+		while(this.isPlanningARide() && Time.getCurrentTime().isBefore(this.timeToDestination)) {
 			try {Thread.sleep(100);} 
 			catch (InterruptedException e) {e.printStackTrace();}
 		}
-		this.setGpsLocation(this.userLastInput.getLastWantedDestination());
-		this.isPlanningARide = false;
-		System.out.println("The user : " + name +" is arrived at destination");
+		if(isPlanningARide) {
+			this.setGpsLocation(this.userLastInput.getLastWantedDestination());
+			this.isPlanningARide = false;
+			System.out.println("The user : " + name +" is arrived at destination");
+		}
 	}
 	
 	public boolean isPlanningARide() {
