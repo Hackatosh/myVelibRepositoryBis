@@ -3,6 +3,10 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.Scanner;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
@@ -73,8 +77,6 @@ class StationTest {
 		try {
 			station.rentABike(user, "Electrical");
 		} catch (RentBikeFailException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} finally {
 			assertTrue(station.getStationStatitics().getRentOperationsNumber() == 0);
 		}
@@ -102,8 +104,7 @@ class StationTest {
 		try {
 			stationReturn.returnABike(user);
 		} catch (StationFullException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
 		}
 		
 		assertTrue(stationReturn.getStationBikeCounters().isThereAny("Electrical"));
@@ -133,8 +134,6 @@ class StationTest {
 		try {
 			stationRent.returnABike(user);
 		} catch (ReturnBikeFailException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}finally{
 			assertTrue(stationReturn.getStationBikeCounters().isThereAny("Electrical")== false);
 			assertTrue(stationReturn.getStationStatitics().getReturnOperationsNumber()==0);		
@@ -143,7 +142,7 @@ class StationTest {
 	}
 
 	@Test
-	void testNotifyObserversDeparture() throws BadInstantiationException, NoStartingStationAvailableException, NoDestinationStationAvailableException, SlotStatusFailException, PlanningRideFailException, FactoryNullException, NetworkNameAlreadyUsedException, AddBikeFailException, StationNameAlreadyUsedException{
+	void testNotifyObserversDeparture() throws BadInstantiationException, NoStartingStationAvailableException, NoDestinationStationAvailableException, SlotStatusFailException, PlanningRideFailException, FactoryNullException, NetworkNameAlreadyUsedException, AddBikeFailException, StationNameAlreadyUsedException, InterruptedException{
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
@@ -165,15 +164,15 @@ class StationTest {
 		stationStandard1.addBike(bycicle2);
 		user.setGpsLocation(new GPSLocation(25,25));
 		user.planningRide(new GPSLocation(0,0), "Shortest_Path", "Electrical");
+		InputStream stdin = System.in;
+		System.setIn(new ByteArrayInputStream("yes".getBytes()));
 		try {
 			stationPlus2.rentABike(user1, "Electrical");
 		} catch (RentBikeFailException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-
+		System.setIn(stdin);
 		assertTrue(user.getCurrentDepartureStation()== stationStandard1);
-
+		
 	}
 
 	@Test
@@ -201,8 +200,6 @@ class StationTest {
 		try {
 			stationPlus2.returnABike(user1);
 		} catch (ReturnBikeFailException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		assertTrue(user.getCurrentDestinationStation()== stationPlus1);
 		
