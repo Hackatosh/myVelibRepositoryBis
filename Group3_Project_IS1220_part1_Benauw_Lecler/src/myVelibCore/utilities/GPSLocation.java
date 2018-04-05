@@ -41,7 +41,7 @@ public class GPSLocation {
 	 */
 	
 	public static double getMaxLatitude(double sidearea) {
-		return sidearea/111.11;
+		return sidearea/11100.11;
 		
 		
 	}
@@ -54,7 +54,7 @@ public class GPSLocation {
 	 */
 	public static double getMaxLongitude(double sidearea) {
 	 
-		return sidearea/(111.1);
+		return sidearea/(11100.11);
 		
 		
 	}

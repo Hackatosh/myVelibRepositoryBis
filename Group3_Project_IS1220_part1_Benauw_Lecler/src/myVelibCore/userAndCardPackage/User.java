@@ -278,6 +278,7 @@ public class User implements Runnable, Observer{
 				this.timeToDestination = Time.operationTime((int) timeDouble2);
 				this.isPlanningARide = true;
 				System.out.println("Ride successfully planned !");
+				System.out.println(this.timeWhenRentingBike);
 			}
 			catch(BadSpeedSelectionException e) {System.out.println("NOT SUPPOSED TO HAPPEN" + e.getMessage());}
 			

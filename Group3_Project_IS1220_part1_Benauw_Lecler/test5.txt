@@ -1,11 +1,12 @@
-setup Rome 50 6 2 123 52
+setup Rome 50 6 5 123 52
 addUser Vincent Vmax Rome
 addUser Guillaume Vlibre Rome
 addUser Marjorie None Rome
 addUser Hélène Vmax Rome
+setUserGPSPosition Rome Vincent 0.0007 0.0001
 runTime
-planRide Rome Vincent Shortest_Path 0.00005 0.00005 Electrical
-planRide Rome Guillaume Prefer_Plus_Stations 0.00012 0.00003 Mechanical
-planRide Rome Marjorie Avoid_Plus_Stations 0.00004 0.0009 Mechanical
-planRide Rome Hélène Fastest_Path 0.00001 0.00010 Electrical
+planRide Rome Vincent Shortest_Path 0.0015 0.0009 Electrical
+planRide Rome Guillaume Prefer_Plus_Stations 0.00011 0.00033 Mechanical
+planRide Rome Marjorie Avoid_Plus_Stations 0.00005 0.0002 Mechanical
+planRide Rome Hélène Fastest_Path 0.00001 0.00008 Electrical
 display Rome
