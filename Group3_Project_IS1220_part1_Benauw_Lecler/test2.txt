@@ -1,15 +1,15 @@
-default_setup Paris 5
-addStation Paris station1 Standard 0.00005 0.00005 5
-addStation Paris station9 Standard 0.0005 0.0005 5
-addStation Paris station10 Standard 0.00049 0.00049 5
-addBicycle Paris station1 Electrical 
-addBicycle Paris station1 Mechanical
-addBicycle Paris station9 Electrical 
-addBicycle Paris station9 Mechanical
-addBicycle Paris station10 Electrical 
-addBicycle Paris station10 Mechanical
-addUser Edouard Vmax Paris
-display Paris
+default_setup Marseille 5
+addStation Marseille station1 Standard 0.00005 0.00005 5
+addStation Marseille station9 Standard 0.0005 0.0005 5
+addStation Marseille station10 Standard 0.00049 0.00049 5
+addBicycle Marseille station1 Electrical 
+addBicycle Marseille station1 Mechanical
+addBicycle Marseille station9 Electrical 
+addBicycle Marseille station9 Mechanical
+addBicycle Marseille station10 Electrical 
+addBicycle Marseille station10 Mechanical
+addUser Jean Vmax Marseille
+display Marseille
 runTime
-planRide Paris Edouard Fastest_Path 0.00055 0.00055 Electrical
-offline Paris station9
+planRide Marseille Jean Fastest_Path 0.00055 0.00055 Electrical
+offline Marseille station9

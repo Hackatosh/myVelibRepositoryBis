@@ -524,7 +524,7 @@ public class User implements Runnable, Observer{
 		}
 		this.setGpsLocation(this.userLastInput.getLastWantedDestination());
 		this.isPlanningARide = false;
-		System.out.println("The user : " + name +" is arrived at destination");
+		System.out.println("The user : " + name +" is arrived to destination");
 	}
 	
 	public boolean isPlanningARide() {

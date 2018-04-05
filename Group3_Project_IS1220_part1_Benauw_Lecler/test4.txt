@@ -1,73 +1,73 @@
-default_setup Paris 5
-addStation Paris station1 Standard 0.002 0.002 5
-addStation Paris station2 Standard 0.004 0.002 5
-addStation Paris station3 Standard 0.006 0.002 5
-addStation Paris station4 Standard 0.002 0.004 5
-addStation Paris station5 Standard 0.004 0.004 5
-addStation Paris station6 Standard 0.006 0.004 5
-addStation Paris station7 Standard 0.002 0.006 5
-addStation Paris station8 Standard 0.004 0.006 5
-addStation Paris station9 Standard 0.006 0.006 5
-addBicycle Paris station1 Electrical 
-addBicycle Paris station1 Mechanical
-addBicycle Paris station2 Electrical 
-addBicycle Paris station2 Mechanical
-addBicycle Paris station3 Electrical 
-addBicycle Paris station3 Mechanical
-addBicycle Paris station4 Electrical 
-addBicycle Paris station4 Mechanical
-addBicycle Paris station5 Electrical 
-addBicycle Paris station5 Mechanical
-addBicycle Paris station6 Electrical 
-addBicycle Paris station6 Mechanical
-addBicycle Paris station7 Electrical 
-addBicycle Paris station7 Mechanical
-addBicycle Paris station8 Electrical 
-addBicycle Paris station8 Mechanical
-addBicycle Paris station9 Electrical 
-addBicycle Paris station9 Mechanical
-addUser Edouard Vmax Paris
-addUser Simon Vmax Paris
-addUser Arnaud Vmax Paris
-addUser Ivan Vplus Paris
-addUser Kevin Vplus Paris
-addUser Quentin Vplus Paris
-addUser Marjorie None Paris
-addUser Vincent None Paris
-addUser Guillaume None Paris
-display Paris
-rentBike Edouard station1 Electrical
-rentBike Simon station2 Mechanical
-rentBike Arnaud station3 Electrical
-rentBike Ivan station4 Mechanical
-rentBike Kevin station5 Electrical
-rentBike Quentin station6 Mechanical
-rentBike Marjorie station7 Electrical
-rentBike Vincent station8 Mechanical
-rentBike Guillaume station9 Electrical
+default_setup Lyon 5
+addStation Lyon station1 Standard 0.002 0.002 5
+addStation Lyon station2 Standard 0.004 0.002 5
+addStation Lyon station3 Standard 0.006 0.002 5
+addStation Lyon station4 Standard 0.002 0.004 5
+addStation Lyon station5 Standard 0.004 0.004 5
+addStation Lyon station6 Standard 0.006 0.004 5
+addStation Lyon station7 Standard 0.002 0.006 5
+addStation Lyon station8 Standard 0.004 0.006 5
+addStation Lyon station9 Standard 0.006 0.006 5
+addBicycle Lyon station1 Electrical 
+addBicycle Lyon station1 Mechanical
+addBicycle Lyon station2 Electrical 
+addBicycle Lyon station2 Mechanical
+addBicycle Lyon station3 Electrical 
+addBicycle Lyon station3 Mechanical
+addBicycle Lyon station4 Electrical 
+addBicycle Lyon station4 Mechanical
+addBicycle Lyon station5 Electrical 
+addBicycle Lyon station5 Mechanical
+addBicycle Lyon station6 Electrical 
+addBicycle Lyon station6 Mechanical
+addBicycle Lyon station7 Electrical 
+addBicycle Lyon station7 Mechanical
+addBicycle Lyon station8 Electrical 
+addBicycle Lyon station8 Mechanical
+addBicycle Lyon station9 Electrical 
+addBicycle Lyon station9 Mechanical
+addUser Pierre Vmax Lyon
+addUser Paul Vmax Lyon
+addUser Jacques Vmax Lyon
+addUser Theo Vplus Lyon
+addUser Thomas Vplus Lyon
+addUser Henry Vplus Lyon
+addUser Jeanne None Lyon
+addUser Marie None Lyon
+addUser Emma None Lyon
+display Lyon
+rentBike Pierre station1 Electrical
+rentBike Paul station2 Mechanical
+rentBike Jacques station3 Electrical
+rentBike Theo station4 Mechanical
+rentBike Thomas station5 Electrical
+rentBike Henry station6 Mechanical
+rentBike Jeanne station7 Electrical
+rentBike Marie station8 Mechanical
+rentBike Emma station9 Electrical
 updateTime 60
-returnBike Edouard station2
+returnBike Pierre station2
 updateTime 60
-returnBike Simon station3
+returnBike Paul station3
 updateTime 60
-returnBike Arnaud station4
+returnBike Jacques station4
 updateTime 60
-returnBike Ivan station5
+returnBike Theo station5
 updateTime 60
-returnBike Kevin station6
+returnBike Thomas station6
 updateTime 60
-returnBike Quentin station7
+returnBike Henry station7
 updateTime 60
-returnBike Marjorie station8
+returnBike Jeanne station8
 updateTime 60
-returnBike Vincent station9
+returnBike Marie station9
 updateTime 60
-returnBike Guillaume station1
+returnBike Emma station1
 updateTime 60
-rentBike Edouard station1 Mechanical
+rentBike Pierre station1 Mechanical
 updateTime 60
-returnBike Edouard station1
-displayStation Paris station1
-displayUser Paris Edouard
-sortStation Paris Least_Occupied
-sortStation Paris Most_Used
+returnBike Pierre station1
+displayStation Lyon station1
+displayUser Lyon Edouard
+sortStation Lyon Least_Occupied
+sortStation Lyon Most_Used
