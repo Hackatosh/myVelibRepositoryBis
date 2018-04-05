@@ -78,8 +78,8 @@ class UserTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
-		User user1 = userFactory.getUser("Simon", network1);
+		Network network1 = NetworkFactory.getNetwork("testNetwork51");
+		User user1 = userFactory.getUser("Simon7", network1);
 		
 		user1.setGpsLocation(new GPSLocation(31,31));
 
@@ -129,9 +129,9 @@ class UserTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory networkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = networkFactory.getNetwork("network1");
+		Network network1 = networkFactory.getNetwork("network57");
 
-		User user = userFactory.getUser("John",network1);
+		User user = userFactory.getUser("John9",network1);
 		
 		Bycicle bycicle1 = bycicleFactory.getBycicle("Electrical");
 
@@ -155,8 +155,8 @@ class UserTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network2 = NetworkFactory.getNetwork("testNetwork2");
-		User user1 = userFactory.getUser("Simon", network2);
+		Network network2 = NetworkFactory.getNetwork("testNetwork47");
+		User user1 = userFactory.getUser("Simon5", network2);
 		user1.setGpsLocation(new GPSLocation(30.3195050,30.319505));
 		Station arrivee = stationFactory.getStation("standard", new GPSLocation(30.3193,30.3193), network2,"station3");
 		Station depart = stationFactory.getStation("standard", new GPSLocation(30.3195,30.3195), network2,"station4");
@@ -189,9 +189,9 @@ class UserTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network3 = NetworkFactory.getNetwork("testNetwork3");
-		User user1 = userFactory.getUser("Simon", network3);
-		User user2 = userFactory.getUser("Edouard", network3);
+		Network network3 = NetworkFactory.getNetwork("testNetwork49");
+		User user1 = userFactory.getUser("Simon6", network3);
+		User user2 = userFactory.getUser("Edouard6", network3);
 		user1.setGpsLocation(new GPSLocation(30.319505,30.319505));
 		Thread user1Thread = new Thread(user1);
 		Thread user2Thread = new Thread(user2);

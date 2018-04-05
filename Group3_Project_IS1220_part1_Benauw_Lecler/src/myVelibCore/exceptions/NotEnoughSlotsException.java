@@ -12,6 +12,6 @@ public class NotEnoughSlotsException extends Exception {
 	
 	@Override
 	public String getMessage() {
-		return "Not enough slots to add to add the required amount of bikes ! You tried to add "+nbikes+" bikes but there is only" + totalFreeSlots + " free slots !";
+		return "Not enough slots to add the required amount of bikes ! You tried to add "+nbikes+" bikes but there is only" + totalFreeSlots + " free slots !";
 	}
 }

@@ -26,7 +26,7 @@ class ParkingSlotTest {
 		AbstractFactory stationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork12");
 		Station station1 = stationFactory.getStation("Standard", new GPSLocation(0,3),network1,"station1");
 		Station station2 = stationFactory.getStation("Standard", new GPSLocation(0,0),network1,"station2");
 		Station station3 = stationFactory.getStation("Standard", new GPSLocation(1,3),network1,"station3");

@@ -381,7 +381,7 @@ public class UserLoop {
          if (command.equalsIgnoreCase(EXIT_COMMAND)) {
         	 if (numberOfParametersEntered == NBR_PARAM_EXIT) {
                  System.out.println(EXITING_MSG);
-                 return;
+                 System.exit(0);
         	 }
         	 else {System.out.println(INCORRECT_PARAMETERS_NUMBER_MSG );}
          }

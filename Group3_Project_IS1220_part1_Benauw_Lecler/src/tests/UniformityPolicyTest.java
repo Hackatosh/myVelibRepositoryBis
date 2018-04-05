@@ -33,7 +33,7 @@ class UniformityPolicyTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork44");
 		Station stationPlus1 = stationFactory.getStation("Plus", new GPSLocation(21,21), network1,"station1");
 		Station stationStandard1 = stationFactory.getStation("Standard", new GPSLocation(20,20),network1,"station2");
 		Station stationPlus2 = stationFactory.getStation("Plus", new GPSLocation(100,100),network1,"station3");

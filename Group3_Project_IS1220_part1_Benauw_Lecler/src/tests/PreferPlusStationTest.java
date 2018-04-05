@@ -30,7 +30,7 @@ class PreferPlusStationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork13");
 		Station stationPlus1 = stationFactory.getStation("Plus", new GPSLocation(1,0),network1,"stationPlus1");
 		Station stationStandard1 = stationFactory.getStation("Standard", new GPSLocation(0,3),network1,"stationStandard1");
 		Station stationPlus2 = stationFactory.getStation("Plus", new GPSLocation(20,20),network1,"stationPlus2");
@@ -105,7 +105,7 @@ class PreferPlusStationTest {
 		AbstractFactory userFactory = FactoryProducer.getFactory("User");
 		AbstractFactory bycicleFactory = FactoryProducer.getFactory("Bycicle");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork2");
+		Network network1 = NetworkFactory.getNetwork("testNetwork24");
 		Station stationPlus5 = stationFactory.getStation("Plus", new GPSLocation(202.1,202),network1,"stationPlus5");
 		Station stationStandard4 = stationFactory.getStation("Standard", new GPSLocation(202,202),network1,"stationStandard4");
 		Station stationPlus6 = stationFactory.getStation("Plus", new GPSLocation(220,220),network1,"stationPlus6");

@@ -21,7 +21,7 @@ class StationFactoryTest {
 	void testGetStation() throws BadInstantiationException, FactoryNullException, NetworkNameAlreadyUsedException, StationNameAlreadyUsedException{
 		AbstractFactory StationFactory = FactoryProducer.getFactory("Station");
 		AbstractFactory NetworkFactory = FactoryProducer.getFactory("Network");
-		Network network1 = NetworkFactory.getNetwork("testNetwork");
+		Network network1 = NetworkFactory.getNetwork("testNetwork35");
 		Station stationPlus = StationFactory.getStation("Plus", new GPSLocation(10,20),network1,"stationPlus");
 		Station stationStandard = StationFactory.getStation("Standard", new GPSLocation(10,20),network1,"stationStandard");
 		assertTrue(stationPlus instanceof StationPlus);
