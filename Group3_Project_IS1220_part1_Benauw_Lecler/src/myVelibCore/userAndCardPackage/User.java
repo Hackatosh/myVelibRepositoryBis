@@ -245,7 +245,6 @@ public class User implements Runnable, Observer{
 		this.currentDestinationStation = null;
 		this.bycicle=null;
 		this.timeWhenReturningBike = null;
-		this.isPlanningARide=false;
 		this.userStatitics.increaseTotalTimeSpentOnABikeBy(Time.timeDifference(Time.getCurrentTime(),this.lastRentTime));
 		this.userStatitics.increaseTotalAmountOfChargesBy(costOfRide);
 		System.out.println("User named "+ name + " is arrived.");
@@ -278,7 +277,7 @@ public class User implements Runnable, Observer{
 				this.timeToDestination = Time.operationTime((int) timeDouble2);
 				this.isPlanningARide = true;
 				System.out.println("Ride successfully planned !");
-				System.out.println(this.timeWhenRentingBike);
+				//System.out.println(this.timeWhenRentingBike);
 			}
 			catch(BadSpeedSelectionException e) {System.out.println("NOT SUPPOSED TO HAPPEN" + e.getMessage());}
 			
