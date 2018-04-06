@@ -431,7 +431,9 @@ public abstract class Station implements Observable {
 
 	public void displayOnlyName() {
 		System.out.println("Station ID : " + this.id);
+		System.out.println("Station name : " + this.name);
 		System.out.println("Is online" + this.status);
+		System.out.println(" ");
 		this.displayType();
 	}
 

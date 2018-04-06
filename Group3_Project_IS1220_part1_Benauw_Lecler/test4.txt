@@ -68,6 +68,6 @@ rentBike Pierre station1 Mechanical
 updateTime 60
 returnBike Pierre station1
 displayStation Lyon station1
-displayUser Lyon Edouard
+displayUser Lyon Pierre
 sortStation Lyon Least_Occupied
 sortStation Lyon Most_Used
