@@ -9,4 +9,3 @@ planRide Rome Vincent Shortest_Path 0.0015 0.0009 Electrical
 planRide Rome Guillaume Prefer_Plus_Stations 0.00011 0.00033 Mechanical
 planRide Rome Marjorie Avoid_Plus_Stations 0.00005 0.0002 Mechanical
 planRide Rome Helene Fastest_Path 0.00001 0.00008 Electrical
-display Rome

@@ -29,8 +29,14 @@ addBicycle Gif-sur-Yvette station9 Electrical
 addBicycle Gif-sur-Yvette station9 Mechanical
 addBicycle Gif-sur-Yvette station10 Electrical 
 addBicycle Gif-sur-Yvette station10 Mechanical
-addUser Denis Vmax Gif-sur-Yvette
+addUser Denis None Gif-sur-Yvette
+addUser Agathe VMax Gif-sur-Yvette
+addUser Maria Vlibre GIf-sur-Yvette
 display Gif-sur-Yvette
 rentBike Denis station1 Electrical
-updateTime 30
+rentBike Agathe station2 Mechanical
+rentBike Maria station3 Mechanical
+updateTime 90
 returnBike Denis station10
+returnBike Agathe station9
+returnBike Maria station8
